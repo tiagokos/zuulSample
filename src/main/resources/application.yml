@@ -1,0 +1,25 @@
+info:
+  component: Gateway Zuul Proxy
+  
+zuul:
+  prefix: /api
+  routes:
+    stores:
+      path: /stores/**
+      serviceId: stores
+      
+stores:
+  ribbon:
+    listOfServers: http://www.yahoo.com, http://www.google.com
+
+ribbon:
+  eureka:
+    enabled: false
+
+server:
+  port: 8765
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
